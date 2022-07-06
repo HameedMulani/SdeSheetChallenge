@@ -19,6 +19,7 @@ public:
             fast = fast->next->next;
         }
          return slow;
-
+    // O(N)
+    // O(1)
     }
 };
