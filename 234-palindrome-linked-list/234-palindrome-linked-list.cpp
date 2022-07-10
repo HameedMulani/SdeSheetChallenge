@@ -10,6 +10,19 @@
  */
 class Solution {
 public:
+    void reverseLL(ListNode *head){
+        ListNode *slow = head;
+        ListNode *prev = NULL;
+        while(slow){
+            ListNode *Next = slow->next;
+            slow->next = prev;
+            
+            prev = slow;
+            slow = Next;
+        }
+        
+    }
+    
     bool isPalindrome(ListNode* head) {
         if(head == NULL || head->next == NULL)
             return true;
