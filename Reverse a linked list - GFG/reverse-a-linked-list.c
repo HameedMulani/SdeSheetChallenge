@@ -18,34 +18,20 @@ void display(struct Node *head);
 
 struct Node* reverseList(struct Node *head)
 {
-    //   struct Node *curr = &head;
-    //   struct Node *prev = NULL;
-    //   while(curr != NULL){
-    //       // stored current -> next Node
-    //       struct Node *NextPtr = curr->next;
+       struct Node *curr = head;
+       struct Node *prev = NULL;
+       while(curr != NULL){
+           // stored current -> next Node
+           struct Node *NextPtr = curr->next;
            
-    //       curr->next = prev;
+           curr->next = prev;
            
-    //       // forwords prev & curr - one step ahead
-    //       prev = curr;
-    //       curr = NextPtr;
-            struct Node *temp,*backward,*current,*forward;
-    backward=NULL;
-       if(head==NULL){
-     return 0;
-    }else{
-     current=head;
-     while(current!=NULL){
-      forward=current->next;
-      current->next=backward;
-      backward=current;
-      current=forward;
-     }
-     head=backward;
-    }
-    return head;
-    //   }
-    //   return curr;
+           // forwords prev & curr - one step ahead
+           prev = curr;
+           curr = NextPtr;
+           
+       }
+       return prev;
 }
 // { Driver Code Starts.
 
