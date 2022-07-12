@@ -11,11 +11,18 @@ public:
     ListNode *detectCycle(ListNode *head) {
         if(!head || !head->next)
             return NULL;
-        unordered_set<ListNode*> set;
-        while(head != NULL){
-            if(set.find(head) != set.end()) return head;
-            set.insert(head);
-            head = head->next;
+        ListNode *slow = head, *fast = head, *entry = head;
+        
+        while(fast != NULL && fast->next != NULL){
+           slow = slow->next;
+            fast = fast->next->next;
+            if(slow == fast){
+                while(slow != entry){
+                    slow = slow->next;
+                    entry = entry->next;
+                }
+                return slow;
+            }
         }
         return NULL;
     }
