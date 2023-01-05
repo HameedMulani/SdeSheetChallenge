@@ -15,7 +15,7 @@ public:
         string temp = "";
         for(int i=0;i<str.length();i++){
             temp = temp + str[i];
-            if(m.find(temp) == m.end()) return false;
+            if(m[temp]==0) return false; // if(m.find(temp) == m.end()
         }
         return true;
     }
