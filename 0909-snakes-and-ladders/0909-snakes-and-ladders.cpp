@@ -11,7 +11,7 @@ public:
             }
             reverse(columns.begin(), columns.end());
         }
-        vector<int> dist(n*n+2, -1);
+        vector<int> dist(n*n+1, -1);
         dist[1] = 0;
         queue<int> q;
         q.push(1);
