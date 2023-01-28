@@ -1,13 +1,13 @@
 class SummaryRanges {
 public:
-    set<int> st;
+    set<int> st; // ordered set sorted
     
     SummaryRanges() {
         st.clear();    
     }
     
     void addNum(int value) {
-        st.insert(value);
+        st.insert(value); //o(logn) - red-black tree 
     }
     
     vector<vector<int>> getIntervals() {
