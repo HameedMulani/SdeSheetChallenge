@@ -1,17 +1,16 @@
 class Solution {
-public:
+ public:
     int tribonacci(int n) {
-                if(n == 0)
-            return 0;
-        if(n == 1 || n == 2)
-            return 1;
-        vector<int> Tribonacci(n+1);
-        Tribonacci[0] = 0;
-        Tribonacci[1] = 1;
-        Tribonacci[2] = 1;
-        for(int i = 3; i < n+1; i++){
-            Tribonacci[i] = Tribonacci[i-1] + Tribonacci[i-2] + Tribonacci[i-3];
+   
+        if(n<2)return n;
+        if(n==2) return 1;
+        int t1=1,t2=1,t0=0,t3;
+        for(int i=3;i<=n;i++){
+            t3=(t0+t2+t1);
+            t0=t1;
+            t1=t2;
+            t2=t3;
         }
-        return Tribonacci[n];
+        return t3;
     }
 };
