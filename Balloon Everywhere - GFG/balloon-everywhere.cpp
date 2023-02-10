@@ -15,6 +15,7 @@ public:
         for(int i=0; i<s.size(); i++){
             mp[s[i]]++;
         }
+        // minimum of all count divide by freqendcy of that char in balloon
         int ans = min({mp['b']/1, mp['a']/1, mp['l']/2, mp['o']/2, mp['n']/1});
     return ans;
     }
