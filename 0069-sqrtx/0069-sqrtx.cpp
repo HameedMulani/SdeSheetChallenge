@@ -1,7 +1,7 @@
 class Solution {
 public:
     int mySqrt(int x) {
-    // Binary Search
+    // Binary Search tc = O(log rootX)
         long long s=0, e=INT_MAX, ans=0;
         
         while(s<=e){
