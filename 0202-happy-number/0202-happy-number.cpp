@@ -5,7 +5,7 @@ public:
         while(n!=1 && st.find(n)==st.end()){
             st.insert(n);
             int sum = 0;
-            while(n){
+            while(n!=0){
                 sum += (n%10)*(n%10);
                 n /= 10;
             }
