@@ -4,12 +4,12 @@ public:
         int n = s.size();
         int l = 0; 
         int r = n-1;
-      while(l<r){
+        while(l<r){
           char temp = s[l];  
-          s[l] = s[r];
-          s[r] = temp;
-          l++;
-          r--;
+          s[l++] = s[r];
+          s[r--] = temp;
+          // l++;
+          // r--;
         }
     }
 };
